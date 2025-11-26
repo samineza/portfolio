@@ -31,20 +31,28 @@ header {
 .logo:hover {
     transform: scale(1.1);
 }
-
-nav a {
-    margin-left: 30px;
-    color: #fff;
-    font-weight: 500;
-    transition: 0.3s ease;
-    padding-bottom: 6px;
-}
+/* ================= HEADER & NAV ================= */
+/* ... existing styles ... */
 
 nav a:hover,
 nav a.active {
     color: #c94917;
     border-bottom: 3px solid #c94917;
 }
+
+/* NEW: Hamburger Icon Style (hide by default on desktop) */
+.menu-icon {
+    display: none; /* Hide on desktop */
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #c94917;
+    padding: 0;
+    z-index: 1001; /* Ensure it's clickable on top of content */
+}
+
+/* ---------------------------------------------------- */
 
 /* ================= HOME ================= */
 .container-items {
@@ -265,7 +273,9 @@ textarea:focus {
 
 /* ================= RESPONSIVE ================= */
 
-/* Tablet/Smaller Laptop View (Up to 900px) - Your existing rules */
+/* ================= RESPONSIVE ================= */
+
+/* Tablet/Smaller Laptop View (Up to 900px) */
 @media (max-width: 900px) {
     header {
         padding: 20px 40px;
@@ -291,36 +301,73 @@ textarea:focus {
     }
 }
 
-/* --- NEW: Mobile Phone View (Up to 480px) --- */
+/* Large Phone / Phablet View (Up to 600px) - TRIGGERS SIDE MENU */
+@media (max-width: 600px) {
+    /* 1. Show the hamburger icon and hide desktop nav */
+    .menu-icon {
+        display: block; 
+    }
+    
+    .nav-links {
+        display: none; /* ESSENTIAL: Hides the horizontal nav on mobile */
+        
+        /* The side menu styles take over here */
+        position: fixed; 
+        top: 0;
+        right: -250px; /* Hidden off-screen */
+        width: 250px; 
+        height: 100vh;
+        background-color: #000; 
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        padding-top: 80px;
+        transition: right 0.4s ease; 
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 1000;
+    }
+
+    /* 2. Style links inside the side menu */
+    .nav-links a {
+        /* OVERRIDE desktop styles for side menu */
+        display: block;
+        margin: 15px 0; 
+        padding: 10px 20px;
+        width: 100%;
+        margin-left: 0;
+        border-bottom: none;
+    }
+
+    /* 3. State for when the menu is OPEN (Added via JS) */
+    .nav-links.open {
+        display: flex; /* Show the menu */
+        right: 0;
+    }
+    
+    /* General mobile layout adjustments */
+    header {
+        padding: 20px 20px;
+        flex-direction: row; /* Keep logo and icon side-by-side */
+        justify-content: space-between;
+    }
+
+    .container-items {
+        padding: 40px 20px;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+}
+
+
+/* Standard Mobile Phone View (Up to 480px) */
 @media (max-width: 480px) {
     /* General section padding for less space */
     section {
         padding: 40px 20px;
     }
-    
-    /* Header & Navigation Adjustments */
-    header {
-        flex-direction: column; /* Stack logo and nav vertically */
-        padding: 20px;
-    }
 
-    .logo {
-        margin-bottom: 15px;
-    }
-
-    nav {
-        display: flex; /* Keep nav items horizontal, but let them wrap */
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-    }
-
-    nav a {
-        margin: 0 10px 10px; /* Reduce margin and add a small bottom margin */
-        font-size: 14px;
-    }
-
-    /* HOME section adjustments (already stacked from 900px, but reducing sizes) */
+    /* HOME section adjustments (reducing sizes) */
     .container-items {
         padding: 40px 20px;
         gap: 30px;
@@ -340,25 +387,23 @@ textarea:focus {
         height: 260px;
     }
     
-    /* Skills and Education/Experience containers */
+    /* Skills and Contact containers */
     .skills-container {
         grid-template-columns: 1fr; /* Single column layout for skills */
         gap: 25px;
     }
 
     .skills-list img {
-        height: 200px; /* Adjust image height for single column */
+        height: 200px;
     }
 
-    /* Contact Form & Quick Contact */
     .form {
         width: 100%; /* Make form take full width */
         padding: 25px;
     }
 
     .quick-contact {
-        flex-direction: column; /* Stack contact buttons vertically */
-        height: auto;
+        flex-direction: column;
         gap: 10px;
         margin-left: 0;
     }
@@ -366,6 +411,7 @@ textarea:focus {
     .quick-btn {
         width: 100%;
     }
+}
 }
 .success-message {
     display: none;
@@ -438,4 +484,5 @@ textarea:focus {
     box-shadow: 0 0 15px #c94917;
     transform: scale(1.05);
 }
+
 
