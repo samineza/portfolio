@@ -20,6 +20,13 @@ header {
     align-items: center;
     padding: 20px 80px;
 }
+nav a {
+    margin-left: 30px;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s ease;
+    padding-bottom: 6px;
+}
 
 .logo {
     font-size: 26px;
@@ -484,5 +491,6 @@ textarea:focus {
     box-shadow: 0 0 15px #c94917;
     transform: scale(1.05);
 }
+
 
 
