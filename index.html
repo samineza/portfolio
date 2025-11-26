@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ineza Sam Shema | Portfolio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="logo-01.ico" type="image/x-icon">
+</head>
+<body>
+
+<header class="first">
+    <a href="#" class="logo">Ineza.</a>
+
+    <nav>
+        <a href="#" id="array" class="active">Home</a>
+        <a href="#" id="service">Services</a>
+        <a href="#" id="skills">Skills</a>
+        <a href="#" id="education">Education</a>
+        <a href="#" id="exprience">Experience</a>
+        <a href="#" id="contact">Contact</a>
+    </nav>
+</header>
+
+<!-- ================= HOME ================= -->
+<section class="container-items" id="content">
+    <img src="IMG_20250418_174222_463.jpg" alt="Ineza Sam Shema" class="profile">
+
+    <div class="content-container">
+        <h1>Hi, I'm <span class="text">Ineza Sam Shema</span></h1>
+
+        <h2 class="typing-text">I'm a <span></span></h2>
+
+        <p>
+            I am a Multimedia Producer and Web Developer passionate about animation,
+            design, and building digital solutions. Thank you for visiting my portfolio.
+        </p>
+
+        <button onclick="openHireForm()" class="hire">Hire Me</button>
+    </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="service-container" id="service-container">
+    <h5>My Services</h5>
+    <p>Below are the professional services I provide.</p>
+
+    <h5>Animation & Motion Graphics</h5>
+    <p>
+        I create high-quality animations and motion graphics using keyframe techniques
+        for storytelling, branding, and visual communication.
+    </p>
+
+    <h5>Web & Software Development</h5>
+    <p>
+        I develop functional and user-friendly systems including websites,
+        e-commerce platforms, and custom applications.
+    </p>
+
+    <h5>Graphic Design</h5>
+    <p>
+        I design professional posters, banners, logos, and digital creatives
+        with a strong focus on visual identity.
+    </p>
+
+    <h5>Front-end & Back-end Development</h5>
+    <p>
+        I build complete systems using HTML, CSS, JavaScript, PHP, Python,
+        and MySQL (XAMPP).
+    </p>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section class="skills-container" id="skills-container" style="display:none;">
+    <div class="skills-list">
+        <h5>Animation</h5>
+        <img src="Animation-01.jpg" alt="Animation Skills" class="skillimg">
+    </div>
+
+    <div class="skills-list">
+        <h5>Graphic Design</h5>
+        <img src="Desgin-01.jpg" alt="Design Skills" class="skillimg">
+    </div>
+
+    <div class="skills-list">
+        <h5>Development</h5>
+        <img src="Screenshot (1)-01.png" alt="Development Skills" class="skillimg">
+    </div>
+
+    <div class="skills-list">
+        <h5>Fast Learner</h5>
+        <img src="firstlearner-01.jpg" alt="Learning Skills" class="skillimg">
+    </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section class="education-container" id="education-container" style="display:none;">
+    <div class="education-item">
+        <h5>
+            Education — <span class="nameh5">Ineza Sam Shema</span>
+        </h5>
+
+        <p class="edtext">
+            Diploma in Multimedia Production and currently pursuing
+            a Bachelor's degree in Business Information Technology.
+        </p>
+
+        <button class="bed" onclick="viewhere()">View Academic Result</button>
+        <br>
+
+        <a href="Results_Slip_INEZA Sam Shema (1).pdf" id="here" style="display:none;">
+            Download Result Slip
+        </a>
+    </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="exprience-container" id="exprience-container" style="display:none;">
+    <div class="exprience-item">
+        <h5>Junior Developer & Multimedia Creator</h5>
+        <p>
+            I am actively building personal and academic projects,
+            gaining real-world experience in web development,
+            animation, and digital media production.
+        </p>
+    </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<!-- CONTACT FORM -->
+<section class="contact-container" id="contact-container" style="display:none;">
+    <div class="form">
+        <h6>Contact Me</h6>
+
+        <form id="contactForm" action="https://formspree.io/f/mabcdxyz" method="POST">
+            <input type="hidden" name="_subject" value="New Portfolio Message">
+            
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message">
+
+            <p id="contactSuccess" class="success-message">✅ Your message has been sent successfully!</p>
+            <p id="contactError" class="error-message">❌ Failed to send message. Try again!</p>
+            <p id="contactLoading" class="loading-message">⏳ Sending...</p>
+        </form>
+
+        <p>Or contact me directly: <br>
+            <strong>Email:</strong> saminezashema@gmail.com
+        </p>
+
+        <!-- HIRE FORM -->
+        <form id="hireForm" action="https://formspree.io/f/xvgnewjy" method="POST" style="display:none;">
+            <input type="hidden" name="_subject" value="Hire Request">
+
+            <input type="email" name="client_email" placeholder="Your Email" required>
+            <textarea name="hire_message" placeholder="Tell me about your project" required></textarea>
+            <input type="submit" value="Send Hire Request">
+
+            <p id="hireSuccess" class="success-message">✅ Hire request sent successfully!</p>
+            <p id="hireError" class="error-message">❌ Failed to send request. Try again!</p>
+            <p id="hireLoading" class="loading-message">⏳ Sending...</p>
+        </form>
+    </div>
+
+    <!-- QUICK CONTACT BUTTONS -->
+    <div class="quick-contact">
+        <a href="mailto:saminezashema@gmail.com" class="quick-btn">Email Me</a>
+        <a href="https://wa.me/250796191623" class="quick-btn" target="_blank">WhatsApp Me</a>
+    </div>
+</section>
+
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
