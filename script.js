@@ -146,3 +146,22 @@ function openHireForm() {
     sections.contact.style.display = "flex";
     document.getElementById("hireForm").style.display = "block";
 }
+
+// --- Side Menu Logic ---
+const menuIcon = document.querySelector('.menu-icon');
+const navLinks = document.querySelector('.nav-links');
+
+menuIcon.addEventListener('click', () => {
+    // Toggle the 'open' class to slide the menu in or out
+    navLinks.classList.toggle('open');
+});
+
+// Optionally, close the menu when a link inside it is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navLinks.classList.contains('open')) {
+            navLinks.classList.remove('open');
+        }
+    });
+});
+// --- End Side Menu Logic ---
