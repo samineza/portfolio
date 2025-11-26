@@ -264,6 +264,8 @@ textarea:focus {
 }
 
 /* ================= RESPONSIVE ================= */
+
+/* Tablet/Smaller Laptop View (Up to 900px) - Your existing rules */
 @media (max-width: 900px) {
     header {
         padding: 20px 40px;
@@ -286,6 +288,83 @@ textarea:focus {
 
     .typing-text {
         font-size: 22px;
+    }
+}
+
+/* --- NEW: Mobile Phone View (Up to 480px) --- */
+@media (max-width: 480px) {
+    /* General section padding for less space */
+    section {
+        padding: 40px 20px;
+    }
+    
+    /* Header & Navigation Adjustments */
+    header {
+        flex-direction: column; /* Stack logo and nav vertically */
+        padding: 20px;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    nav {
+        display: flex; /* Keep nav items horizontal, but let them wrap */
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav a {
+        margin: 0 10px 10px; /* Reduce margin and add a small bottom margin */
+        font-size: 14px;
+    }
+
+    /* HOME section adjustments (already stacked from 900px, but reducing sizes) */
+    .container-items {
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+    h1 {
+        font-size: 30px; /* Smaller main heading */
+    }
+
+    .typing-text {
+        font-size: 18px; /* Smaller typing text */
+    }
+
+    /* Profile image size reduction */
+    .profile {
+        width: 180px;
+        height: 260px;
+    }
+    
+    /* Skills and Education/Experience containers */
+    .skills-container {
+        grid-template-columns: 1fr; /* Single column layout for skills */
+        gap: 25px;
+    }
+
+    .skills-list img {
+        height: 200px; /* Adjust image height for single column */
+    }
+
+    /* Contact Form & Quick Contact */
+    .form {
+        width: 100%; /* Make form take full width */
+        padding: 25px;
+    }
+
+    .quick-contact {
+        flex-direction: column; /* Stack contact buttons vertically */
+        height: auto;
+        gap: 10px;
+        margin-left: 0;
+    }
+    
+    .quick-btn {
+        width: 100%;
     }
 }
 .success-message {
@@ -359,3 +438,4 @@ textarea:focus {
     box-shadow: 0 0 15px #c94917;
     transform: scale(1.05);
 }
+
